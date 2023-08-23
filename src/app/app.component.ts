@@ -9,7 +9,8 @@ import { ListaDeCompraService } from './service/lista-de-compra.service';
 })
 export class AppComponent implements OnInit, OnChanges{
   title = 'app-lista-de-compras';
-  listaDeCompra! : Array<Item>
+  listaDeCompra!: Array<Item>
+  itemParaEditar!: Item
 
   constructor(
     private service: ListaDeCompraService
@@ -22,5 +23,9 @@ export class AppComponent implements OnInit, OnChanges{
 
   ngOnChanges() {
 
+  }
+
+  editarItem(item: Item) {
+    this.itemParaEditar = item;
   }
 }
